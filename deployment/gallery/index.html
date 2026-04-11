@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astrid Suarez | Galería</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    color: #eee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    margin-top: 0.5rem;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.contact {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.contact a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.gallery {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 1rem 3rem;
+}
+
+figure {
+    margin: 0 0 3rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    color: #bbb;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Astrid Suarez</h1>
+<p>Colección de Pinturas</p>
+
+<div class="contact">
+Contacto: 
+<a href="https://wa.me/50372796888" target="_blank">
+503 7279 6888 (WhatsApp)
+</a>
+</div>
+</header>
+
+<main class="gallery" id="gallery"></main>
+
+<footer>
+© 2026 Astrid Suarez — Todos los derechos reservados
+</footer>
+
+<script>
+const paintings = [
+"arbol-de-fuego-2.jpg",
+"arbol-de-fuego.jpg",
+"atardecer-2.jpg",
+"atardecer-3.jpg",
+"atardecer.jpg",
+"bosque-brumoso-2.jpg",
+"bosque-brumoso.jpg",
+"bosque-en-blanco-y-negro.jpg",
+"bosque-en-rojo.jpg",
+"bosque-en-verano-2.jpg",
+"bosque-en-verano.jpg",
+"bosque-encantado-2.jpg",
+"bosque-encantado.jpg",
+"bosque.jpg",
+"bosques-en-rojo-2.jpg",
+"camino-del-bosque-2.jpg",
+"camino-del-bosque.jpg",
+"coleccion-privada-2.jpg",
+"colleccion-privada.jpg",
+"collection-privada-2.jpg",
+"cordillera-2.jpg",
+"cordillera-de-ahuachapan.jpg",
+"cordillera.jpg",
+"cortes-blanco-2.jpg",
+"cortes-blanco-3.jpg",
+"cortes-blanco-4.jpg",
+"cortez-blanco.jpg",
+"desnudos.jpg",
+"entre-cafetales-2.jpg",
+"entre-cafetales.jpg",
+"flor-de-cactus-2.jpg",
+"flor-de-cactus.jpg",
+"flor-de-fuego.jpg",
+"floracion.jpg",
+"flores-2.jpg",
+"flores-en-amarillo.jpg",
+"flores-en-azul.jpg",
+"flores.jpg",
+"galan-de-noche-2.jpg",
+"galan-de-noche.jpg",
+"geranios-2.jpg",
+"geranios.jpg",
+"impresion-azul-2.jpg",
+"impresion-azul.jpg",
+"jacaranda-2.jpg",
+"jacaranda.jpg",
+"jugando-en-la-playa.jpg",
+"la-dama-de-las-flores-2.jpg",
+"la-dama-de-las-flores.jpg",
+"laguna-verde.jpg",
+"llamarada-del-bosque-2.jpg",
+"llamarada-del-bosque.jpg",
+"manglar-2.jpg",
+"manglar.jpg",
+"maquilishuat-2.jpg",
+"maquilishuat.jpg",
+"margaritas-2.jpg",
+"margaritas.jpg",
+"marina-2.jpg",
+"marina.jpg",
+"meditando.jpg",
+"montanas-de-apaneca-2.jpg",
+"montanas-de-apaneca.jpg",
+"montecristo-2.jpg",
+"montecristo.jpg",
+"nuestras-montanas-2.jpg",
+"nuestras-montanas.jpg",
+"oriente-rio-torola.jpg",
+"orquidea-2.jpg",
+"orquidea-3.jpg",
+"orquidia.jpg",
+"panoramica-2.jpg",
+"panoramica-desde-el-volcan-de-santa-.jpg",
+"panoramica-desde-el-volcan-de-santa-ana-2.jpg",
+"panoramica.jpg",
+"ramillete.jpg",
+"rio-lempa-2.jpg",
+"rio-lempa.jpg",
+"rio-torola-2.jpg",
+"rio-torola.jpg",
+"sause-amarillo-2.jpg",
+"sause-amarillo.jpg",
+"sinfonia-en-rojo-2.jpg",
+"sinfonia-en-rojo.jpg",
+"soledad-2.jpg",
+"soledad.jpg",
+"valle-de-jiboa-2.jpg",
+"valle-de-jiboa-3.jpg",
+"valle-de-jiboa.jpg",
+"vientos.jpg",
+"zona-oriental.jpg"
+];
+
+const gallery = document.getElementById("gallery");
+
+paintings.forEach(file => {
+    const figure = document.createElement("figure");
+
+    const img = document.createElement("img");
+    img.src = "paintings/" + file;
+    img.loading = "lazy";
+    img.alt = file.replace(".jpeg", "").replace(/-/g, " ");
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = img.alt;
+
+    figure.appendChild(img);
+    figure.appendChild(caption);
+    gallery.appendChild(figure);
+});
+</script>
+
+</body>
+</html>
+

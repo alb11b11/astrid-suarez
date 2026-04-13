@@ -164,7 +164,7 @@ paintings.forEach(file => {
     const img = document.createElement("img");
     img.src = "paintings/" + file;
     img.loading = "lazy";
-    img.alt = file.replace(".jpeg", "").replace(/-/g, " ");
+    img.alt = file.replace(/\.[^.]+$/, "").replace(/-/g, " ");
 
     const caption = document.createElement("figcaption");
     caption.textContent = img.alt;
